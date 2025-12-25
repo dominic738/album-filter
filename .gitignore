@@ -1,0 +1,8 @@
+.env 
+# Album art (local only)
+album-art/
+album_colors.json
+albums.json
+deleted.txt
+playground.py
+read.py
