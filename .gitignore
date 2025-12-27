@@ -1,4 +1,5 @@
-.env 
+.env
+.cache
 # Album art (local only)
 album-art/
 album_colors.json

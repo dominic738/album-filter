@@ -23,11 +23,16 @@ for img_path in album_dir.iterdir():
     album_id = img_path.stem
     avg_rgb = get_average_rgb(img_path)
 
-    print(f"{img_path}, RGB: {avg_rgb}")
+
+    lab = rgb2lab((avg_rgb / 255.0).reshape(1, 1, 3)).astype(np.float32)
+
+
+    print(f"{img_path}, RGB: {avg_rgb}, LAB: {lab[0][0]}")
 
     album_colors[album_id] = {
         "file_path" : str(img_path),
-        "avg_rgb" : list(map(float, avg_rgb))
+        "avg_rgb" : list(map(float, avg_rgb)),
+        "lab" : list(map(float, lab[0][0]))
     }
 
 
